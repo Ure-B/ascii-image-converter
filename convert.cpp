@@ -58,7 +58,7 @@ unsigned char* downsampleImage(unsigned char* originalData, int* width, int* hei
     return newData;
 }
 
-void createImage(const char* path = "image.png", int scale = 1) {
+void createImage(const char* path = "image.png", int scale = 1, bool color = true) {
     string ascii = " .:-=+*#%@";
     int width, height, channels;
 
@@ -83,6 +83,10 @@ void createImage(const char* path = "image.png", int scale = 1) {
 
                 int brightness = 0.2126 * R + 0.7152 * G + 0.0722 * B;
                 int c = (brightness * (ascii.length() - 1)) / 255;
+                if (!color) {
+                    cout << ascii[c];
+                    continue;
+                }
                 string colorCode = "\033[38;2;" + to_string(R) + ";" + to_string(G) + ";" + to_string(B) + "m";
                 cout << colorCode << ascii[c] << "\033[0m";
             }
@@ -98,7 +102,7 @@ void createImage(const char* path = "image.png", int scale = 1) {
 int main() {
     // Image Data
     createImage("image2.PNG", 8);
-    createImage("image1.jpg", 1);
+    createImage("image1.jpg", 1, false);
     //createImage("image2.png", 32);
 
     return 0;
