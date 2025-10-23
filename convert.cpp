@@ -100,6 +100,8 @@ void createImage(const char* path = "image.png", int scale = 1, bool color = tru
 }
 
 int main() {
+    // ToDo: Add command line arguments for image path, scale, and color option
+
     // Image Data
     createImage("image2.PNG", 8);
     createImage("image1.jpg", 1, false);
