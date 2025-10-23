@@ -8,8 +8,8 @@ This project takes any image file, downsamples it, and maps each pixel to an ASC
 
 ## 📸 Preview
 <div align="left">
-  <img src="/image.jpeg" alt="Test Image" width="50%"/>
-  <img src="/screenshot.png" alt="ASCII Preview" width="50%"/>
+  <img src="/sample-image.jpeg" alt="Test Image" width="50%"/>
+  <img src="/sample-result.png" alt="ASCII Preview" width="50%"/>
 </div>
 
 ---
