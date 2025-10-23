@@ -83,7 +83,8 @@ void createImage(const char* path = "image.png", int scale = 1) {
 
                 int brightness = 0.2126 * R + 0.7152 * G + 0.0722 * B;
                 int c = (brightness * (ascii.length() - 1)) / 255;
-                cout << ascii[c];
+                string colorCode = "\033[38;2;" + to_string(R) + ";" + to_string(G) + ";" + to_string(B) + "m";
+                cout << colorCode << ascii[c] << "\033[0m";
             }
             cout << endl;
         }
@@ -96,8 +97,8 @@ void createImage(const char* path = "image.png", int scale = 1) {
 
 int main() {
     // Image Data
-    //createImage("image.png", 1);
-    createImage("image1.jpg", 2);
+    createImage("image2.PNG", 8);
+    createImage("image1.jpg", 1);
     //createImage("image2.png", 32);
 
     return 0;
