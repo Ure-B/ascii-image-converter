@@ -62,18 +62,18 @@ void createImage(const char* path = "image.png", int scale = 1, bool color = tru
     string ascii = " .:-=+*#%@";
     int width, height, channels;
 
+    // Get original image data
     unsigned char* data = stbi_load(path, &width, &height, &channels, 3);
-
     channels = 3;
 
-    std::cout << "Image Width: " << width << ", Height: " << height << ", Channels: " << channels << endl;
+    if (data) {   
+        std::cout << "Image Width: " << width << ", Height: " << height << ", Channels: " << channels << endl;
 
-    data = downsampleImage(data, &width, &height, &channels, scale);
-
-    cout << "Downsampled Image Width: " << width << ", Height: " << height << ", Channels: " << channels << endl;
-
-    if (data) {
+        // Downsample the image
+        data = downsampleImage(data, &width, &height, &channels, scale);
+        cout << "Downsampled Image Width: " << width << ", Height: " << height << ", Channels: " << channels << endl;
         
+        // Convert to ASCII
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 int index = (y * width + x) * channels;
@@ -100,12 +100,25 @@ void createImage(const char* path = "image.png", int scale = 1, bool color = tru
 }
 
 int main() {
-    // ToDo: Add command line arguments for image path, scale, and color option
+    cout << "ASCII Image Converter" << endl 
+         << "=====================" << endl 
+         << "Enter the image path (string), scale factor (int), and color option (Y/N). (All separated by a space)" << endl;
+    
+    // Get input from user
+    string filePath;
+    int scale;
+    string color;
+    bool colorOption;
+    cin >> filePath >> scale >> color;
 
-    // Image Data
-    createImage("image2.PNG", 8);
-    createImage("image1.jpg", 1, false);
-    //createImage("image2.png", 32);
+    if (color == "Y") {
+        colorOption = true;
+    } else {
+        colorOption = false;
+    }
+
+    // Convert and display the image
+    createImage(filePath.c_str(), scale, colorOption);
 
     return 0;
 }
