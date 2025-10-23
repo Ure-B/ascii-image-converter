@@ -96,9 +96,9 @@ void createImage(const char* path = "image.png", int scale = 1) {
 
 int main() {
     // Image Data
-    createImage("image.png", 1);
+    //createImage("image.png", 1);
     createImage("image1.jpg", 2);
-    createImage("image2.png", 32);
+    //createImage("image2.png", 32);
 
     return 0;
 }
