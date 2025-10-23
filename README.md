@@ -1,6 +1,7 @@
 # 🎨 ASCII Image Converter
 
 Convert images into **ASCII art** directly in your terminal!  
+
 This project takes any image file, downsamples it, and maps each pixel to an ASCII character based on brightness — creating a fun text-based representation of your images. 🖼️➡️💻
 
 ---
@@ -32,7 +33,6 @@ This project takes any image file, downsamples it, and maps each pixel to an ASC
 ### Prerequisites
 - C++ compiler (G++ / MSVC / Clang) 🛠️
 - `stb_image.h` header file 📎
-- (Optional) OpenCV for webcam/video support 🎥
 
 ### Installation
 ```bash
@@ -65,7 +65,7 @@ createImage("image.png", scale, color);
 
 **Example**
 ```text
-Enter file path, scale, and color (1 for true, 0 for false): image.png 2 Y
+Enter the image path (string), scale factor (int), and color option (Y/N). (All separated by a space): image.png 2 Y
 ```
 The image will be printed in ASCII directly to your terminal 💻.
 

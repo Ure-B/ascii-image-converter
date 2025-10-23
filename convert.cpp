@@ -102,7 +102,7 @@ void createImage(const char* path = "image.png", int scale = 1, bool color = tru
 int main() {
     cout << "ASCII Image Converter" << endl 
          << "=====================" << endl 
-         << "Enter the image path (string), scale factor (int), and color option (Y/N). (All separated by a space)" << endl;
+         << "Enter the image path (string), scale factor (int), and color option (Y/N). (All separated by a space): ";
     
     // Get input from user
     string filePath;
